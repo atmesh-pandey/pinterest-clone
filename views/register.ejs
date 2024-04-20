@@ -1,0 +1,28 @@
+<% include ./partials/header.ejs %>
+<div class="w-full h-screen bg-top bg-cover bg-[url('https://images.unsplash.com/photo-1512389142860-9c449e58a543?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] flex flex-col items-center justify-center">
+  <div class="w-96 bg-white px-10 py-5 rounded-md">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest Logo" class="h-12 w-12 mb-4 mx-auto">
+    <h1 class="text-3xl text-center font-semibold text-zinc-600 leading-none capitalize">Welcome to Pinterest</h1>
+    <form action="/register" method="post" class="mt-4">
+      <input class="border-2 rounded-md block w-full px-4 mt-2 py-2" type="text" name="name" placeholder="name">
+      <input class="border-2 rounded-md block w-full px-4 mt-2 py-2" type="text" name="username" placeholder="Username">
+      <input class="border-2 rounded-md block w-full px-4 mt-2 py-2" type="email" name="email" placeholder="Email">
+      <input class="border-2 rounded-md block w-full px-4 mt-2 py-2" type="password" name="password" placeholder="Password">
+      <!-- <input class="border-2 rounded-md block w-full px-4 mt-2 py-2" type="date" name="dob" placeholder="Date of Birth"> -->
+      <input class="border-2 block w-full px-4 mt-2 py-2 bg-red-700 text-white rounded-full" type="submit" value="Sign up">
+    </form>
+    <div class="mt-6 text-center">
+      <p class="text-xs text-gray-600">By signing up, you agree to Pinterest's <a href="#"
+              class="font-semibold">Terms of Service</a> and acknowledge you've read our <a href="#"
+              class="font-semibold">Privacy Policy</a>. Notice at collection.</p>
+    </div>
+    <div class="mt-6 text-center">
+      <p class="text-xs text-gray-600">Already have an account? <a href="/login" class="font-semibold">Log in</a></p>
+    </div>
+    <div class="mt-6 text-center">
+      <p class="text-xs text-gray-600"> Go to Home Page <a href="/" class="font-semibold">Get
+              Click here!</a></p>
+    </div>
+  </div>
+</div>
+<% include ./partials/footer.ejs %>

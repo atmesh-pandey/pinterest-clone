@@ -1,0 +1,35 @@
+<% include ./partials/header.ejs %>
+<div class="w-full h-[43.95rem] bg-gray-100 pt-24">
+    <div class="container mx-auto py-4">
+        <div class="flex flex-col items-center mb-6">
+            <h1 class="text-3xl font-bold mb-4">Edit Profile</h1>
+            <form action="/editprofile" method="post" enctype="multipart/form-data" class="max-w-md w-full">
+                <div class="mb-3">
+                    <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                    <input id="name" name="name" type="text" value="<%= user.name %>"
+                        class="mt-1 block w-full px-3 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-1 focus:ring-red-700 focus:border-transparent">
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="block text-sm font-medium mb-1">Username</label>
+                    <input id="username" name="username" type="text" value="<%= user.username %>"
+                        class="mt-1 block w-full px-3 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-1 focus:ring-red-700 focus:border-transparent pointer-events-none">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                    <input id="email" name="email" type="email" value="<%= user.email %>"
+                        class="mt-1 block w-full px-3 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-1 focus:ring-red-700 focus:border-transparent">
+                </div>
+                <div class="mb-3">
+                    <label for="profileImage" class="block text-sm font-medium mb-1">Profile Image</label>
+                    <input id="profileImage" name="profileImage" type="file"
+                        class="mt-1 block w-full px-3 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-1 focus:ring-red-700 focus:border-transparent">
+                </div>
+                <div class="flex justify-center">
+                    <input class="px-4 py-2 bg-red-700 text-white rounded-md cursor-pointer hover:bg-red-600 mt-4"
+                        type="submit" value="Save Changes">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<% include ./partials/footer.ejs %>

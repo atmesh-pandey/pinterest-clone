@@ -1,0 +1,35 @@
+<% include ./partials/header.ejs %>
+<div class="w-full h-[43.95rem] text-black flex flex-col justify-center items-center">
+    <h1 class="text-3xl font-bold mb-4">Create a New Post</h1>
+    <hr class="border-t border-white opacity-20 w-full mb-4">
+    <form id="createPostForm" action="/createpost" method="post" enctype="multipart/form-data" class="max-w-md w-full">
+        <div class="mb-3">
+            <label class="block text-sm font-medium mb-1">Upload Image</label>
+            <input name="postimage" type="file" class="mt-1 block w-full px-3 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-1 focus:ring-red-700 focus:border-transparent">
+        </div>
+        <div class="mb-3">
+            <label for="title" class="block text-sm font-medium mb-1">Title</label>
+            <input id="title" name="title" type="text" class="mt-1 block w-full px-3 py-2 bg-gray-600 text-white rounded-md focus:outline-none focus:ring-1 focus:ring-red-700 focus:border-transparent">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="block text-sm font-medium mb-1">Description</label>
+            <textarea id="description" name="description" rows="3" class="mt-1 block w-full px-3 py-2 bg-gray-600 text-white rounded-md resize-none focus:outline-none focus:ring-1 focus:ring-red-700 focus:border-transparent"></textarea>
+        </div>
+        <div class="flex justify-center">
+            <input id="submitBtn" class="px-4 py-2 bg-red-700 text-white rounded-md cursor-pointer hover:bg-red-600 mt-4" type="submit" value="Create Post">
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('createPostForm').addEventListener('submit', function(event) {
+        const title = document.getElementById('title').value;
+        const description = document.getElementById('description').value;
+
+        if (!title || !description) {
+            alert('Please fill in all fields before submitting the form.');
+            event.preventDefault();
+        }
+    });
+</script>
+<% include ./partials/footer.ejs %>
